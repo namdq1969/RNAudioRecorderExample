@@ -9,21 +9,25 @@ import {
   ListView
 } from 'react-native';
 import moment from 'moment';
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 import {AudioPlayer, AudioRecorder, AudioUtils} from 'react-native-audio-player-recorder';
 
 const {dHeight, dWidth} = Dimensions.get('window');
 const Constants = {
   MAX_AUDIO_LENGTH: 120,
-  AUDIO_PATH: AudioUtils.DocumentDirectoryPath + '/example.aac',
+  AUDIO_PATH: '123'
 }
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timer: '00:00'
+      isRecording: false,
+      isPlaying: false,
+      isPaused: false,
+      currentTime: 0
     }
+    this.timer = null;
 
     this.dataSource = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1.title !== r2.title
@@ -37,7 +41,8 @@ export default class Home extends Component {
   }
 
   prepareRecordingPath() {
-    AudioRecorder.prepareRecordingAtPath(Constants.AUDIO_PATH, {
+    this.recordTitle = AudioUtils.DocumentDirectoryPath + `/example-${moment().format()}.aac`;
+    AudioRecorder.prepareRecordingAtPath(this.recordTitle, {
       SampleRate: 22050,
       Channels: 1,
       AudioQuality: 'Low',
@@ -47,8 +52,12 @@ export default class Home extends Component {
   }
 
   _record() {
-    AudioRecorder.startRecording()
-    this.setState({isPlaying: false, isRecording: true, isFinishRecorded: false, audioLength: 0, currentTime: 0})
+    if (this.state.currentTime == 0) {
+      this.prepareRecordingPath();
+    }
+
+    AudioRecorder.startRecording();
+    this.setState({isRecording: true});
     this.timer = setInterval(() => {
       const time = this.state.currentTime + 1
       this.setState({currentTime: time})
@@ -58,41 +67,31 @@ export default class Home extends Component {
     }, 1000)
   }
 
-  _stopRecording() {
-    const {isRecording} = this.state
-    if (!isRecording) 
-      return
-
-    AudioRecorder.stopRecording()
-    this.setState({
-      audioLength: this.state.currentTime + 1
-    })
-    clearInterval(this.timer)
-    this.setState({isRecording: false, isFinishRecorded: true, currentTime: 0})
+  _pauseRecording() {
+    AudioRecorder.pauseRecording();
+    clearInterval(this.timer);
+    this.setState({isRecording: false});
   }
 
-  _startPlaying() {
-    if (this.state.isPaused) {
-      AudioPlayer.unpause()
-      this.setState({isPlaying: true, isPaused: false})
-      return
-    }
-    AudioPlayer.play(Constants.AUDIO_PATH)
+  _stopRecording() {
+    AudioRecorder.stopRecording();
+    this.props.saveRecord(this.recordTitle, this.state.currentTime + 1)
+    clearInterval(this.timer);
+    this.setState({isRecording: false, currentTime: 0});
+  }
+
+  _startPlaying(path) {
+    AudioPlayer.play(path)
     this.setState({isPlaying: true})
   }
 
-  _pausePlaying() {
-    AudioPlayer.pause()
-    this.setState({isPaused: true, isPlaying: false})
-  }
-
   _stopPlaying() {
-    AudioPlayer.stop()
+    AudioPlayer.stop();
     this.setState({isPlaying: false})
   }
 
-  _playAudio() {
-    Actions.player({durationSeconds: this.state.audioLength})
+  _deleteRecord(path) {
+    this.props.deleteRecord(path);
   }
 
   _renderRow(rowData, sectionID, rowID) {
@@ -103,12 +102,44 @@ export default class Home extends Component {
         <View style={{
           paddingLeft: 20,
           height: 50,
-          justifyContent: 'center'
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexDirection: 'row'
         }}>
+          <TouchableHighlight underlayColor={'transparent'} onPress={() => {
+            this._startPlaying(rowData.path);
+          }}>
+            <View style={{
+              height: 36,
+              width: 36,
+              borderRadius: 18,
+              borderColor: 'black',
+              borderWidth: 2,
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <Ionicon name={'md-play'} size={24} color={'black'}/>
+            </View>
+          </TouchableHighlight>
           <Text style={{
-            paddingTop: 25,
             color: '#616161'
           }}>{rowData.title}</Text>
+          <TouchableHighlight underlayColor={'transparent'} onPress={() => {
+            this._deleteRecord(rowData.path);
+          }}>
+            <View style={{
+              marginRight: 20,
+              height: 36,
+              width: 36,
+              borderRadius: 3,
+              borderColor: 'red',
+              borderWidth: 2,
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <Ionicon name={'md-trash'} size={24} color={'red'}/>
+            </View>
+          </TouchableHighlight>
         </View>
         <View style={{
           marginLeft: 20,
@@ -121,6 +152,7 @@ export default class Home extends Component {
 
   render() {
     let dataSource = this.dataSource.cloneWithRows(this.props.recordList);
+    let timer = moment.duration(this.state.currentTime, 'seconds');
     return (
       <View style={styles.container}>
         <StatusBar barStyle={'light-content'} backgroundColor={'black'} hidden={false}/>
@@ -138,10 +170,15 @@ export default class Home extends Component {
           }}>{'Record'}</Text>
         </View>
         <View style={{
-          height: 80,
           backgroundColor: 'black'
         }}>
-          <TouchableHighlight underlayColor={'transparent'} onPress={() => {}}>
+          <TouchableHighlight underlayColor={'transparent'} onPress={() => {
+            if (this.state.isRecording) {
+              this._pauseRecording();
+            } else {
+              this._record();
+            }
+          }}>
             <View style={{
               alignSelf: 'center',
               height: 44,
@@ -152,19 +189,39 @@ export default class Home extends Component {
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <View style={{
-                height: 30,
-                width: 30,
-                borderRadius: 15,
-                backgroundColor: '#F22335'
-              }}/>
+              {this.state.isRecording
+                ? <Ionicon name={'md-pause'} size={30} color={'white'}/>
+                : <View style={{
+                  height: 30,
+                  width: 30,
+                  borderRadius: 15,
+                  backgroundColor: '#F22335'
+                }}/>
+              }
             </View>
           </TouchableHighlight>
           <Text style={{
             alignSelf: 'center',
             marginTop: 10,
+            marginBottom: 10,
             color: 'white'
-          }}>{this.state.timer}</Text>
+          }}>{this.state.currentTime == 0
+            ? '00:00:00'
+            : `${moment.utc(timer.as('milliseconds')).format('HH:mm:ss')}`}</Text>
+          {this.state.isRecording
+            ? <TouchableHighlight underlayColor={'transparent'} onPress={() => this._stopRecording()}>
+              <Text style={{
+                  height: 40,
+                  width: 60,
+                  marginLeft: 20,
+                  marginTop: 20,
+                  fontSize: 16,
+                  color: 'white'
+                }}>
+                  Done
+                </Text>
+              </TouchableHighlight>
+            : null}
         </View>
         <ListView enableEmptySections={true} dataSource={dataSource} renderRow={this._renderRow.bind(this)} showsVerticalScrollIndicator={false}/>
       </View>

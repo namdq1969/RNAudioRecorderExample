@@ -1,11 +1,7 @@
 import * as actionTypes from '../actionTypes';
 
 const DEFAULT_STATE = {
-  recordList: [{
-    title: undefined,
-    path: undefined,
-    createdAt: undefined
-  }]
+  recordList: []
 }
 
 export default function(state = DEFAULT_STATE, action) {
@@ -16,6 +12,12 @@ export default function(state = DEFAULT_STATE, action) {
         recordList: [...state.recordList, action.payload]
       }
       break;
+    }
+    case actionTypes.DELETE_RECORD: {
+      return {
+        ...state,
+        recordList: state.recordList.filter(record => record.path !== action.payload.path)
+      }
     }
     default:
       return state
