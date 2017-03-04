@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import {
-  StyleSheet,
   Text,
   View,
   Dimensions,
   StatusBar,
   TouchableHighlight,
-  ListView
+  ListView,
+  Alert
 } from 'react-native';
 import moment from 'moment';
 import Ionicon from 'react-native-vector-icons/Ionicons';
@@ -14,8 +14,7 @@ import {AudioPlayer, AudioRecorder, AudioUtils} from 'react-native-audio-player-
 
 const {dHeight, dWidth} = Dimensions.get('window');
 const Constants = {
-  MAX_AUDIO_LENGTH: 120,
-  AUDIO_PATH: '123'
+  MAX_AUDIO_LENGTH: 120
 }
 
 export default class Home extends Component {
@@ -23,8 +22,6 @@ export default class Home extends Component {
     super(props);
     this.state = {
       isRecording: false,
-      isPlaying: false,
-      isPaused: false,
       currentTime: 0
     }
     this.timer = null;
@@ -59,12 +56,12 @@ export default class Home extends Component {
     AudioRecorder.startRecording();
     this.setState({isRecording: true});
     this.timer = setInterval(() => {
-      const time = this.state.currentTime + 1
+      const time = this.state.currentTime + 0.1
       this.setState({currentTime: time})
       if (time === Constants.MAX_AUDIO_LENGTH) {
         this.stopRecording()
       }
-    }, 1000)
+    }, 100)
   }
 
   _pauseRecording() {
@@ -82,16 +79,25 @@ export default class Home extends Component {
 
   _startPlaying(path) {
     AudioPlayer.play(path)
-    this.setState({isPlaying: true})
   }
 
   _stopPlaying() {
     AudioPlayer.stop();
-    this.setState({isPlaying: false})
   }
 
   _deleteRecord(path) {
-    this.props.deleteRecord(path);
+    Alert.alert('Delete', 'You want to delete this record?', [
+      {
+        text: 'No',
+        onPress: () => console.log('Cancel Pressed!')
+      }, {
+        text: 'Yes',
+        onPress: () => {
+          this._stopPlaying();
+          this.props.deleteRecord(path);
+        }
+      }
+    ], {cancelable: false})
   }
 
   _renderRow(rowData, sectionID, rowID) {
@@ -154,7 +160,9 @@ export default class Home extends Component {
     let dataSource = this.dataSource.cloneWithRows(this.props.recordList);
     let timer = moment.duration(this.state.currentTime, 'seconds');
     return (
-      <View style={styles.container}>
+      <View style={{
+        flex: 1
+      }}>
         <StatusBar barStyle={'light-content'} backgroundColor={'black'} hidden={false}/>
         <View style={{
           paddingTop: 20,
@@ -197,7 +205,7 @@ export default class Home extends Component {
                   borderRadius: 15,
                   backgroundColor: '#F22335'
                 }}/>
-              }
+}
             </View>
           </TouchableHighlight>
           <Text style={{
@@ -206,11 +214,11 @@ export default class Home extends Component {
             marginBottom: 10,
             color: 'white'
           }}>{this.state.currentTime == 0
-            ? '00:00:00'
-            : `${moment.utc(timer.as('milliseconds')).format('HH:mm:ss')}`}</Text>
-          {this.state.isRecording
+              ? '00:00:00'
+              : `${moment.utc(timer.as('milliseconds')).format('HH:mm:ss')}`}</Text>
+          {this.state.currentTime > 0
             ? <TouchableHighlight underlayColor={'transparent'} onPress={() => this._stopRecording()}>
-              <Text style={{
+                <Text style={{
                   height: 40,
                   width: 60,
                   marginLeft: 20,
@@ -228,10 +236,3 @@ export default class Home extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF'
-  }
-});
