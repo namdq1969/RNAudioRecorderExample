@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EC291C6403CE1CCB137B8DC602EB375 /* Pods-RNAudioRecorderExample-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FFAF33CF0F78EE253634011910226D /* Pods-RNAudioRecorderExample-tvOS-dummy.m */; };
+		269BFA1D1E7114FD468BD3F7D64283AF /* Pods-RNAudioRecorderExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6EBA9EDAB05C63D89A768F83C9D92B5 /* Pods-RNAudioRecorderExample-dummy.m */; };
+		2D91FD02376726A719DABE3601058FE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		ADFB53488A0EDB9F7FFB5726FE5606B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12B6341F3D2122DED864D7E6116D8180 /* Pods-RNAudioRecorderExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RNAudioRecorderExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		23639A26B09F3078D2D73B103E3447B0 /* Pods-RNAudioRecorderExample-tvOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RNAudioRecorderExample-tvOS-resources.sh"; sourceTree = "<group>"; };
+		35114ED1323BB622E90004710921B9B5 /* Pods-RNAudioRecorderExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNAudioRecorderExample.release.xcconfig"; sourceTree = "<group>"; };
+		52F94A09F22E2BCFC26A51A02D471C11 /* Pods-RNAudioRecorderExample-tvOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RNAudioRecorderExample-tvOS-frameworks.sh"; sourceTree = "<group>"; };
+		54FFAF33CF0F78EE253634011910226D /* Pods-RNAudioRecorderExample-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RNAudioRecorderExample-tvOS-dummy.m"; sourceTree = "<group>"; };
+		5AA22E1334B3EE18CF2C49156106241D /* libPods-RNAudioRecorderExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RNAudioRecorderExample.a"; path = "libPods-RNAudioRecorderExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62D7D629A9604CF615C30312BD3E90BF /* libPods-RNAudioRecorderExample-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RNAudioRecorderExample-tvOS.a"; path = "libPods-RNAudioRecorderExample-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F7200B2AF78698BF19D61B24645EE1 /* Pods-RNAudioRecorderExample-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNAudioRecorderExample-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		85CFB1B5185C5EF7D41CE225CBAD6DC8 /* Pods-RNAudioRecorderExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNAudioRecorderExample.debug.xcconfig"; sourceTree = "<group>"; };
+		92BA06B8D7970060650536859AE74BDF /* Pods-RNAudioRecorderExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RNAudioRecorderExample-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B1DA68D9C2815C426A158F89FE3E5269 /* Pods-RNAudioRecorderExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RNAudioRecorderExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C71DE011EB3E8A5C101F243613BD8C7A /* Pods-RNAudioRecorderExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RNAudioRecorderExample-resources.sh"; sourceTree = "<group>"; };
+		C955BED5A9979554E97F7FEDA991F6F9 /* Pods-RNAudioRecorderExample-tvOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RNAudioRecorderExample-tvOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E584A8707B0EBFD488BCDCB41EE6EF9A /* Pods-RNAudioRecorderExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RNAudioRecorderExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		E6EBA9EDAB05C63D89A768F83C9D92B5 /* Pods-RNAudioRecorderExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RNAudioRecorderExample-dummy.m"; sourceTree = "<group>"; };
+		FF8495083B6AB7FF47F213DBC4E9035B /* Pods-RNAudioRecorderExample-tvOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RNAudioRecorderExample-tvOS-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0EAB46A1B39CE11A6E17BE41BE44204E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D91FD02376726A719DABE3601058FE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85DA1EC816D0DDDFD7AE7FBBA20FE590 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADFB53488A0EDB9F7FFB5726FE5606B3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				AB0B54776EEEB6E980FE480AAEA5AEFF /* Products */,
+				FE0255101BA27285D595A3E89B0F964B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9BEB70D4E7A7ECDE9E76DFE4DA1AE856 /* Pods-RNAudioRecorderExample */ = {
+			isa = PBXGroup;
+			children = (
+				12B6341F3D2122DED864D7E6116D8180 /* Pods-RNAudioRecorderExample-acknowledgements.markdown */,
+				E584A8707B0EBFD488BCDCB41EE6EF9A /* Pods-RNAudioRecorderExample-acknowledgements.plist */,
+				E6EBA9EDAB05C63D89A768F83C9D92B5 /* Pods-RNAudioRecorderExample-dummy.m */,
+				92BA06B8D7970060650536859AE74BDF /* Pods-RNAudioRecorderExample-frameworks.sh */,
+				C71DE011EB3E8A5C101F243613BD8C7A /* Pods-RNAudioRecorderExample-resources.sh */,
+				85CFB1B5185C5EF7D41CE225CBAD6DC8 /* Pods-RNAudioRecorderExample.debug.xcconfig */,
+				35114ED1323BB622E90004710921B9B5 /* Pods-RNAudioRecorderExample.release.xcconfig */,
+			);
+			name = "Pods-RNAudioRecorderExample";
+			path = "Target Support Files/Pods-RNAudioRecorderExample";
+			sourceTree = "<group>";
+		};
+		AB0B54776EEEB6E980FE480AAEA5AEFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AA22E1334B3EE18CF2C49156106241D /* libPods-RNAudioRecorderExample.a */,
+				62D7D629A9604CF615C30312BD3E90BF /* libPods-RNAudioRecorderExample-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCCC8B4CF58E082AD431D6B97373DF92 /* Pods-RNAudioRecorderExample-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				C955BED5A9979554E97F7FEDA991F6F9 /* Pods-RNAudioRecorderExample-tvOS-acknowledgements.markdown */,
+				FF8495083B6AB7FF47F213DBC4E9035B /* Pods-RNAudioRecorderExample-tvOS-acknowledgements.plist */,
+				54FFAF33CF0F78EE253634011910226D /* Pods-RNAudioRecorderExample-tvOS-dummy.m */,
+				52F94A09F22E2BCFC26A51A02D471C11 /* Pods-RNAudioRecorderExample-tvOS-frameworks.sh */,
+				23639A26B09F3078D2D73B103E3447B0 /* Pods-RNAudioRecorderExample-tvOS-resources.sh */,
+				65F7200B2AF78698BF19D61B24645EE1 /* Pods-RNAudioRecorderExample-tvOS.debug.xcconfig */,
+				B1DA68D9C2815C426A158F89FE3E5269 /* Pods-RNAudioRecorderExample-tvOS.release.xcconfig */,
+			);
+			name = "Pods-RNAudioRecorderExample-tvOS";
+			path = "Target Support Files/Pods-RNAudioRecorderExample-tvOS";
+			sourceTree = "<group>";
+		};
+		FE0255101BA27285D595A3E89B0F964B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9BEB70D4E7A7ECDE9E76DFE4DA1AE856 /* Pods-RNAudioRecorderExample */,
+				BCCC8B4CF58E082AD431D6B97373DF92 /* Pods-RNAudioRecorderExample-tvOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0DDF819FA1029E3A9EB8D349DDE7054C /* Pods-RNAudioRecorderExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09DD5B604AA4779E34E2183180B93F3E /* Build configuration list for PBXNativeTarget "Pods-RNAudioRecorderExample" */;
+			buildPhases = (
+				28353F3AE5BF308F27339B9A28D223B4 /* Sources */,
+				85DA1EC816D0DDDFD7AE7FBBA20FE590 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-RNAudioRecorderExample";
+			productName = "Pods-RNAudioRecorderExample";
+			productReference = 5AA22E1334B3EE18CF2C49156106241D /* libPods-RNAudioRecorderExample.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C02D259677FE0A1BAD84E50CE2DD5EEC /* Pods-RNAudioRecorderExample-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 026B415532900203229979869C51C822 /* Build configuration list for PBXNativeTarget "Pods-RNAudioRecorderExample-tvOS" */;
+			buildPhases = (
+				463906981281ED3F4A43EA37FEDBC579 /* Sources */,
+				0EAB46A1B39CE11A6E17BE41BE44204E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-RNAudioRecorderExample-tvOS";
+			productName = "Pods-RNAudioRecorderExample-tvOS";
+			productReference = 62D7D629A9604CF615C30312BD3E90BF /* libPods-RNAudioRecorderExample-tvOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AB0B54776EEEB6E980FE480AAEA5AEFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0DDF819FA1029E3A9EB8D349DDE7054C /* Pods-RNAudioRecorderExample */,
+				C02D259677FE0A1BAD84E50CE2DD5EEC /* Pods-RNAudioRecorderExample-tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28353F3AE5BF308F27339B9A28D223B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269BFA1D1E7114FD468BD3F7D64283AF /* Pods-RNAudioRecorderExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		463906981281ED3F4A43EA37FEDBC579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EC291C6403CE1CCB137B8DC602EB375 /* Pods-RNAudioRecorderExample-tvOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		015A368F878AC3E2CEAE21DDE8026304 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		20661A1EF8273F779233A3441BF36551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85CFB1B5185C5EF7D41CE225CBAD6DC8 /* Pods-RNAudioRecorderExample.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4E003811E94AD4963DB09799B593D88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65F7200B2AF78698BF19D61B24645EE1 /* Pods-RNAudioRecorderExample-tvOS.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DB780D04ADD9351F5CBE5E681BD92033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1DA68D9C2815C426A158F89FE3E5269 /* Pods-RNAudioRecorderExample-tvOS.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		F2D4D510760C08D5A1FA58DEBA806BE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35114ED1323BB622E90004710921B9B5 /* Pods-RNAudioRecorderExample.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		026B415532900203229979869C51C822 /* Build configuration list for PBXNativeTarget "Pods-RNAudioRecorderExample-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4E003811E94AD4963DB09799B593D88 /* Debug */,
+				DB780D04ADD9351F5CBE5E681BD92033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09DD5B604AA4779E34E2183180B93F3E /* Build configuration list for PBXNativeTarget "Pods-RNAudioRecorderExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20661A1EF8273F779233A3441BF36551 /* Debug */,
+				F2D4D510760C08D5A1FA58DEBA806BE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
+				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
